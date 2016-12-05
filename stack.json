@@ -1,0 +1,48 @@
+{
+  "Resources": {
+    "swarmSG": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "My Docker Swarm SecurityGroup",
+        "SecurityGroupIngress" : [
+           {
+             "IpProtocol" : "tcp",
+             "FromPort" : "80",
+             "ToPort" : "80",
+             "CidrIp" : "0.0.0.0/0"
+           },
+           {
+             "IpProtocol" : "tcp",
+             "FromPort" : "22",
+             "ToPort" : "22",
+             "CidrIp" : "0.0.0.0/0"
+           },
+           {
+             "IpProtocol" : "tcp",
+             "FromPort" : "2376",
+             "ToPort" : "2377",
+             "CidrIp" : "0.0.0.0/0"
+           },
+           {
+             "IpProtocol" : "tcp",
+             "FromPort" : "7946",
+             "ToPort" : "7946",
+             "CidrIp" : "172.31.0.0/16"
+           },
+           {
+             "IpProtocol" : "udp",
+             "FromPort" : "7946",
+             "ToPort" : "7946",
+             "CidrIp" : "172.31.0.0/16"
+           },
+           {
+             "IpProtocol" : "udp",
+             "FromPort" : "4789",
+             "ToPort" : "4789",
+             "CidrIp" : "172.31.0.0/16"
+           }
+        ]
+      }
+    }
+  }
+}
